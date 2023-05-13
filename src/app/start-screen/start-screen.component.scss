@@ -1,0 +1,36 @@
+.start-screen {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 90vh;
+    }
+}
+
+.start-label {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -70%);
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#d8a400;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px  rgb(0, 0, 0);
+    &:hover {
+        cursor: pointer;
+        background-color:#dab747;
+    }
+}
