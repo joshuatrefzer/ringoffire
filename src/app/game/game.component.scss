@@ -15,6 +15,12 @@
     @extend .center-childs
 }
 
+.button-add {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+}
+
 .card-stack {
     position: relative;
 
