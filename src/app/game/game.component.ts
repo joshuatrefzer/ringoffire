@@ -14,7 +14,7 @@ export class GameComponent implements OnInit {
   currentCard: string = '';
   game?: Game;
 
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog) { }
 
   newGame() {
     this.game = new Game;
@@ -33,6 +33,8 @@ export class GameComponent implements OnInit {
       console.log('new card:', this.currentCard);
       console.log(this.game);
 
+      this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
 
 
       setTimeout(() => {
@@ -46,8 +48,10 @@ export class GameComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((name: string) => {
+      if ( name && name.length > 0) {
+        this.game?.players.push(name);
+      }
 
     });
   }

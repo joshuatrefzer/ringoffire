@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit{
- @Input() name = 'josh';
+ @Input() name:string = 'josh';
+ @Input() playerActive:boolean = false;
 
   ngOnInit(): void {
     
